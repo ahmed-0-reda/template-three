@@ -1,0 +1,782 @@
+/* Start Global roles----------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing :border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Arimo" , sans-serif;
+}
+:root{
+    --main-background:#252f31;
+    --main-color: #2dcc70;
+    --secound-color: #667072;
+    --text-color: #a1a1a1;
+    --background-color:#ebebeb ;
+    --padding-top-but:100px;
+}
+html{
+    scroll-behavior: smooth;
+}
+ul{
+    list-style: none;
+}
+h2{
+    color: var(--secound-color);
+    margin-bottom: 30px;
+    font-size: 40px;
+    text-transform: uppercase;
+    /* we can make h2 as a global variable ..
+     It has been replicated many times with the same features  */
+}
+p{
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.5;
+    /* we can make p as a global variable ..
+    It has been replicated many times with the same features  */
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}
+/* Small Screen */
+@media (min-width: 767px) {
+    .container{
+        width: 700px;
+    }  
+}
+/* Mediam Screen */
+@media (min-width: 992px) {
+    .container{
+        width: 950px;
+    }  
+}
+/* Large Screen */
+@media (min-width: 1200px) {
+    .container{
+        width: 1150px;
+    }  
+}
+/* End Global roles----------------------------- */
+/* Start Header */
+.header {
+    background-color: var(--main-background);
+    padding: 20px 0;
+
+}
+.header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    position: relative;
+}
+.header .container .logo{
+    width: 115px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 15px;
+}
+.header .container .logo >span{
+    padding: 10px 15px;
+    background: hsl(0deg 0% 37% / 57%);
+    margin-right: 10px;
+}
+.header .container .logo p{
+    display: inline;
+}
+.header .container .logo p span{
+    color: var(--main-color);
+}
+.header .container nav{
+    flex: 3;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+.header .container nav ul li a{
+    padding: 15px;
+}
+.header .container nav ul{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+.header .container nav ul a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+}
+.header .container nav ul a:hover{
+    color: var(--main-color);
+}
+@media (min-width:991px) {
+    .header .container i{
+        display: none;
+    }
+}
+@media (max-width: 991px) {
+    .header .container nav i:hover + ul{
+        display: flex;
+    }   
+    .header .container nav ul{
+        flex-direction: column;
+        position: absolute;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        top: calc(100% + 10px);
+        display: none;
+    }
+    .header .container nav ul::before{
+        content: '';
+        position: absolute;
+        top: -15px;
+        right: 0;
+        border: 8px solid #fff;
+        border-color: transparent transparent rgba(0, 0, 0, 0.9);
+    }
+    .header .container nav li{
+        padding: 15px 5px;
+        transition: .4s;
+    }
+    .header .container nav li:hover{
+        padding-left: 15px;
+    }
+    .header .container nav ul li a{
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+    }
+    .header .container nav ul li:not(:last-child){
+        border-bottom: 1px solid #777;
+    }
+}
+/* End Header */
+/* Start landing */
+.landing{
+    background-image: url(../imges/landing.jpg);
+    background-position: center;
+    background-size: cover;
+    height: calc(100vh - 58px);
+    position: relative;
+}
+.landing::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+.landing .text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: block;
+    text-align: center;
+}
+.landing .text h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 40px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    padding: 15px 0;
+    margin-bottom: 50px;
+}
+.landing .text a{
+    font-size: 15px;
+    padding: 10px 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+@media (max-width: 991px) {
+    .landing .text h1 {
+        font-size: 30px;
+    }
+    .landing .text a {
+        font-size: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .landing .text h1 {
+        font-size: 15px;
+        margin-bottom: 30px;
+
+    }
+    .landing .text a {
+        font-size: 10px;
+
+    }
+}
+/* End Landing */
+/* Start Acheved */
+.acheved{
+    padding-top: var(--padding-top-but);
+    padding-bottom: var(--padding-top-but);
+}
+.acheved .container{
+    display: flex;
+    justify-content: space-between;
+}
+.acheved .container .box{
+    flex-basis: 30%;
+}
+@media (max-width: 767px) {
+    .acheved .container{
+        flex-direction: column;
+    }
+    .acheved .container .box{
+        margin-bottom: 30px;
+    }
+}
+.acheved .container .box h2{
+    /* properties take form global */
+    font-size: 30px;
+}
+.acheved .container .box p{
+    /* properties take form global */
+}
+/* End Acheved  */
+/* Start-About */
+.about{
+    position: relative;
+    display: flex;
+    background-color: #ebebeb;
+}
+.about .image{
+    width: 600px;
+    background-image: url(../imges/about-img.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.about .container {
+    display: flex;
+}
+.about .container{
+    padding-left: 70px;
+    padding-right: 90px;
+    padding-top: var(--padding-top-but);
+    padding-bottom: var(--padding-top-but);
+}
+@media (max-width: 991px) {
+    .about{
+        position: relative;
+    }
+    .about .image{
+        display: none;
+    }
+    .about .container{
+        padding: 20px;
+    }
+}
+.about .container .inform >.text{
+    margin: 0 0 50px 0;
+}
+.about .container .inform h2{
+    /* properties take form global */
+}
+.about .container .skills{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about .container .skills >.box{
+    width: calc(50% - 20px);
+    margin-bottom: 50px;
+    display: flex;
+}
+.about .container .skills .box:nth-last-child(2),
+.about .container .skills .box:last-child{
+    margin-bottom: 0px;
+}
+@media (max-width: 991px) {
+    .about .container .skills{
+        flex-direction: column;
+        flex: 1;
+    }
+    .about .container .skills .box:nth-last-child(2),
+    .about .container .skills .box:last-child,
+    .about .container .skills .box{
+        width: 100%;
+        margin-bottom: 35px;
+        display: flex;
+    }
+}
+.about .container .skills i{
+    color: var(--main-color);
+    font-size: 40px;
+    margin-right: 20px;
+}
+.about .container .skills h3{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--secound-color);
+    margin-bottom: 20px;
+}
+.about .container .skills p{
+    /* properties take form global */
+}
+/* End-About */
+/* Start Skills */
+.skill-section{
+    padding-top:var(--padding-top-but) ;
+    padding-bottom:var(--padding-top-but) ;
+}
+.skill-section .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.skill-section .container >div{
+    width: calc(50% - 20px);
+}
+@media (max-width:767px) {
+    .skill-section .container{
+        flex-direction: column;
+    }
+    .skill-section .container >div{
+        width: 100%;
+    }
+}
+.skill-section .container .skills-inform h2{
+    color: var(--secound-color);
+    margin-bottom: 30px;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.skill-section .container .skills-inform p{
+    /* properties take form global */
+    margin-bottom: 35px;
+}
+.skill-section .container .skills-inform p:last-child{
+    margin-bottom: 60px;
+}
+.skill-section .container .skills-inform a{
+    padding: 15px 35px;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-top:30px ;
+    text-decoration: none;
+}
+.skill-section .container .my-skills{
+    padding-top: 20px;
+}
+.skill-section .container .my-skills .content h3{
+    color: var(--secound-color);
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 30px 0 20px 0;
+}
+.skill-section .container .my-skills .content .prog-holder{
+    width: 100%;
+    height: 25px;
+    background-color: var(--background-color);
+}
+.skill-section .container .my-skills .content span{
+    background-color: var(--main-color);
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.skill-section .container .my-skills .content span::after{
+    content: attr(data-progres);
+    position: absolute;
+    right: -15px;
+    top: -35px;
+    padding: 5px;
+    background-color: #000;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+}
+.skill-section .container .my-skills .content span::before{
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -10px;
+    border: 7px solid #000;
+    border-color: #000 transparent transparent;
+}
+/* End Skills*/
+/* Start Resume*/
+.resume{
+    padding-top: var(--padding-top-but);
+    padding-bottom: var(--padding-top-but);
+    text-align: center;
+    background-color: var(--background-color);
+    position: relative;
+}
+.resume::after{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    border: 10px solid;
+    border-color: var(--background-color) transparent transparent transparent;
+}
+.resume .container h2{
+    /* properties take form global */
+}
+.resume .container p{
+    margin-bottom: 45px;
+    /* properties take form global */
+}
+.resume .container a{
+    padding: 15px 35px;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-size: 15px;
+    margin-top: 30px;
+    text-decoration: none;
+}
+/* End  Resume*/
+/* Start education*/
+.education{
+    padding-top: var(--padding-top-but);
+    padding-bottom: var(--padding-top-but);
+}
+.education .container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.education .container >div{
+    width: calc(50% - 30px);
+}
+@media (max-width:767px) {
+    .education .container{
+        flex-direction: column;
+        text-align: center;
+    }
+    .education .container >div{
+        width: 100%;
+    }
+}
+.education .container .text h2{
+    /* properties take form global */
+}
+.education .container .text p{
+    margin-bottom: 45px;
+    /* properties take form global */
+}
+.education .container .inform .box h3{
+    color: var(--secound-color);
+    margin-bottom: 30px;
+    font-size: 20px;
+    margin-top: 70px;
+    text-transform: uppercase;
+}
+.education .container .inform .box p:first-of-type{
+    text-transform: uppercase;
+    font-size: 13px;
+    color: rgb(112, 112, 112);
+    font-weight: 800;
+}
+.education .container .inform .box p:first-of-type span{
+    text-transform: initial;
+    margin-left: 5px;
+    color: var(--text-color);
+}
+.education .container .inform .box hr{
+    margin: 20px 0;
+    border: 0.1px solid var(--background-color);
+}
+.education .container .inform .box p.grade{
+    margin-top: 20px;
+    padding: 6px 15px;
+    background-color: var(--main-color);
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;    
+}
+.education .container .inform .box p:last-child{
+    /* properties take form global */
+    font-size: 15px;
+}
+.education .container >hr{
+    position: absolute;
+    width: calc(100% - 30px);
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/*______________ This code will be written again in work-experiance section with some
+________________class names changed Knowing that  .. it can be written in other ways, 
+________________but this is the best way to quickly access the 
+________________elements of this section  */
+
+
+/* End education*/
+/* Start work-experiance*/
+.work-experiance{
+    padding-bottom: var(--padding-top-but);
+}
+.work-experiance .container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.work-experiance .container >div{
+    width: calc(50% - 30px);
+}
+@media (max-width:767px) {
+    .work-experiance .container{
+     flex-direction: column;
+     text-align: center;
+    }
+    .work-experiance .container >div{
+        width: 100%;
+    }
+}
+.work-experiance .container .text h2{
+    /* properties take form global */
+}
+.work-experiance .container .text p{
+    /* properties take form global */
+}
+.work-experiance .container .inform .box h3{
+    color: var(--secound-color);
+    margin-bottom: 30px;
+    font-size: 20px;
+    margin-top: 70px;
+    text-transform: uppercase;
+}
+.work-experiance .container .inform .box p:first-of-type{
+    text-transform: uppercase;
+    font-size: 13px;
+    color: rgb(112, 112, 112);
+    font-weight: 800;
+}
+.work-experiance .container .inform .box p:first-of-type span{
+    text-transform: initial;
+    margin-left: 5px;
+    color: var(--text-color);
+}
+.work-experiance .container .inform .box hr{
+    margin: 20px 0;
+    border: 0.1px solid var(--background-color);
+}
+.work-experiance .container .inform .box p.tinme{
+    margin-top: 20px;
+    padding: 6px 15px;
+    background-color: var(--main-color);
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;    
+}
+.work-experiance .container .inform .box p:last-child{
+    /* properties take form global */    
+}
+/* End  work-experiance*/
+/* Start Quate*/
+.quate{
+    padding-top: var(--padding-top-but);
+    padding-bottom: var(--padding-top-but);
+    background-color: var(--background-color);
+    text-align: center;
+    position: relative;
+}
+.quate .container q{
+    color: var(--text-color);
+    margin-bottom: 45px;
+    line-height: 1.5;
+    font-size: 15px;
+}
+.quate .container q::before{
+    content: "\f10d";
+    font-family: FontAwesome;
+    font-weight: 900;
+}
+.quate .container q::after{
+    content: "\f10e";
+    font-family: FontAwesome;
+    font-weight: 900;    
+}
+.quate .container p{
+    margin-top: 30px;
+    text-transform: capitalize;
+    color: var(--secound-color);
+    font-weight: 900;
+}
+.quate .container ul{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    margin-top: 20px;
+}
+.quate .container li{
+    width: 9px;
+    height: 9px;
+    margin: 5px;
+    border-radius: 50%;
+    border: 1.5px solid var(--main-color);
+}
+.quate .container li.active{
+    background-color: var(--main-color);
+}
+/* End Quate*/
+/* Start portfolio*/
+.portfolio{
+    padding-top: var(--padding-top-but);
+    padding-bottom: var(--padding-top-but);
+    text-align: center;
+}
+.portfolio .text h2{
+    /* properties take form global */
+}
+.portfolio .text p{
+    margin-bottom: 45px;
+    font-size: 15px;
+    /* properties take form global */
+}
+.portfolio .images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px ,1fr));
+    grid-gap: 10px 10px;
+}
+.portfolio .images >img{
+    height: 300px;
+    width: 100%;
+}
+/* End portfolio*/
+/* Start Contact-Me*/
+.contact-me{
+    padding-top: var(--padding-top-but);
+    background-color: var(--main-background);
+    color: var(--text-color);
+    font-size: 14px;
+}
+.contact-me .container {
+    display: flex;
+    justify-content: space-between;
+}
+.contact-me .container >div,
+.contact-me .container >form {
+    width: 45%;
+}
+@media (max-width:767px) {
+    .contact-me .container {
+        flex-direction: column;
+    }
+    .contact-me .container >div,
+    .contact-me .container >form {
+        width: 100%;
+    }
+}
+.contact-me .container .contact-box >h2{
+    /* properties take form global */
+    color: #fff;
+}
+.contact-me .container .contact-box >p{
+    /* properties take form global */
+    letter-spacing: 1.5px;
+}
+.contact-me .contact-box .address {
+    margin: 40px 0;
+    color: var(--text-color);
+}
+.contact-me .contact-box .address p{
+    margin: 5px 0;
+}
+.contact-me .contact-box .inform h3{
+    color: #fff;
+    font-weight: normal;
+    font-size: inherit;
+    margin-bottom: 5px;
+}
+.contact-me .contact-box .inform h3 span{
+    color: var(--text-color);
+    margin-left: 15px;
+}
+.contact-me form{
+    padding-top: 40px
+}
+.contact-me form p{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    text-transform: capitalize;
+}
+.contact-me form p::after{
+    content: "\2a";
+    font-family: "FontAwesome";
+    font-weight: 100;
+    position: relative;
+    color: var(--text-color);
+    right: -5px;
+    font-size: 12px;
+}
+.contact-me form .min-input{
+    margin-bottom: 40px;
+    width: 100%;
+    background-color: #4b5457;
+    border: 0;
+    padding: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    color: #fff;
+    letter-spacing: 1.5px;
+}
+.contact-me form input:focus{
+    outline: none;
+    border-bottom: 1px solid #fff;
+}
+.contact-me form input[type="submit"]{
+    padding: 15px 15px;
+    text-transform: capitalize;
+    font-size: 15px;
+    background-color: #191e21;
+    border: none;
+    color: #fff;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+.contact-me .information{
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #191e21;
+    text-align: center;
+    margin-top: 50px;
+}
+.contact-me .information p{
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #4b5457;
+    margin: 10px 0;
+}
+.contact-me .information ul{
+    display: flex;
+    justify-content: center;
+}
+.contact-me .information ul li a{
+    margin: 5px;
+    background-color: #4b5457;
+    color: #191e21;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+/* End  Contact-Me*/
